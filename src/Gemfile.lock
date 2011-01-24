@@ -1,0 +1,63 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.3)
+    async_sinatra (0.4.0)
+      rack (>= 1.2.1)
+      sinatra (>= 1.0)
+    daemons (1.1.0)
+    em-http-request (0.3.0)
+      addressable (>= 2.0.0)
+      escape_utils
+      eventmachine (>= 0.12.9)
+    em-redis (0.3.0)
+      eventmachine
+    em-synchrony (0.2.0)
+      eventmachine (>= 0.12.9)
+    escape_utils (0.1.9)
+    eventmachine (0.12.10)
+    json (1.5.0)
+    kgio (2.1.1)
+    rack (1.2.1)
+    rack-fiber_pool (0.9.1)
+    rack-throttle (0.3.0)
+      rack (>= 1.0.0)
+    rainbows (3.0.0)
+      rack (~> 1.1)
+      unicorn (~> 3.3)
+    redis (2.1.1)
+    shotgun (0.8)
+      rack (>= 1.0)
+    sinatra (1.1.2)
+      rack (~> 1.1)
+      tilt (~> 1.2)
+    thin (1.2.7)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    tilt (1.2.2)
+    unicorn (3.3.1)
+      kgio (~> 2.1)
+      rack
+    yajl-ruby (0.7.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  addressable
+  async_sinatra
+  em-http-request
+  em-redis
+  em-synchrony
+  eventmachine
+  json
+  rack-fiber_pool
+  rack-throttle
+  rainbows
+  redis
+  shotgun
+  sinatra
+  thin
+  unicorn
+  yajl-ruby

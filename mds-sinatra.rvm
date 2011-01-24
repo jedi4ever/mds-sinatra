@@ -1,0 +1,3 @@
+rvm gemset create mds-sinatra
+rvm gemset use mds-sinatra
+rvm gemset list

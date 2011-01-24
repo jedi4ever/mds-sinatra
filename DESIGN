@@ -1,0 +1,17 @@
+1)use bundler for dependencies
+	gem install bundler
+
+2)running sinatra vs rails
+	we don't need the complexity of rails
+
+3)sinatra + async sinatra
+	gem install async_sinatra
+	
+g	
+
+fiberpool
+
+unicorn, thin, rainbows
+	use unicorn
+
+

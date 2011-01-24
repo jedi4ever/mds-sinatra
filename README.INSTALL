@@ -1,0 +1,50 @@
+Install ruby 1.9
+	-> use rvm
+#Install redis
+$ brew install redis
+
+##################################
+$ . mds-sinatra.rvm
+$ gem install bundler
+
+##################################
+$ cd src
+$ bundle update
+
+##################################
+# Unicorn configuration
+$ cat config.unicorn
+
+# Rack configuration
+$ cat config.ru
+
+# Start the application
+$ unicorn -c config.unicorn
+
+# Or use the shell script
+
+
+thin start -s3 --socket /tmp/thin.sock
+thin stop -s3 
+
+### NGINX
+# http://library.linode.com/web-servers/nginx/configuration/front-end-proxy-and-software-load-balancing#basic_http_clustering
+
+location / {
+	proxy_pass  http://backend;
+}
+
+upstream  backend {
+   server   unix:/tmp/thin.0.sock;
+   server   unix:/tmp/thin.1.sock;
+   server   unix:/tmp/thin.2.sock;
+   server   unix:/tmp/thin.3.sock;
+   server   unix:/tmp/thin.4.sock;
+}
+
+
+thin start  -t 1 -s 8 -S /tmp/thin.sock
+thin stop  -t 1 -s 8 -S /tmp/thin.sock
+
+/usr/local/sbin/nginx  -c   `pwd`/nginx-thin.conf -s stop
+/usr/local/sbin/nginx  -c   `pwd`/nginx-thin.conf -s reload

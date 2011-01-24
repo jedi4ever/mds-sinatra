@@ -1,0 +1,22 @@
+
+$ ab -V
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+# Don't use localhost but 127.0.0.1
+http://old.nabble.com/apr_socket_connect-for-ab-td20314451.html
+
+#test gets
+ab  -n 1000 -c 30 http://127.0.0.1:8080/
+
+#test posts
+ab  -n 1000 -c 30 http://127.0.0.1:8080/ -T 'application/x-www-form-urlencoded'
+	name=lalala&othername=alalal
+	URL encoded
+
+-k keepalive
+
+
+ab  -n 1000 -c 30 -T 'application/x-www-form-urlencoded' -p postfile http://127.0.0.1:8080/ 
+

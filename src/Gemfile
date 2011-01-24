@@ -1,0 +1,66 @@
+# mds Gemfile
+source "http://rubygems.org"
+
+########################################
+# Sinatra
+########################################
+gem "async_sinatra"
+gem "sinatra"
+
+########################################
+# Get the Async Rack Runners
+########################################
+gem "unicorn"
+gem 'thin'
+gem 'rainbows'
+
+########################################
+# Rack tools
+########################################
+gem 'rack-throttle'
+
+########################################
+# Event/Fiber Machine stuff
+########################################
+gem "eventmachine"
+gem 'rack-fiber_pool'
+
+# async wrappers
+gem 'eventmachine'
+gem 'em-synchrony', :require => [
+  'em-synchrony',
+  'em-synchrony/em-http'
+  ]
+
+########################################
+# Mysql Evented
+########################################
+#gem 'mysqlplus', :require => 'mysqlplus'
+#gem 'em-mysqlplus', :require => 'em-activerecord'
+
+########################################
+# Redis + Evented
+########################################
+gem 'em-redis'
+gem 'redis'
+#gem 'ezmobius-redis'
+
+
+########################################
+# async http requires
+########################################
+gem 'em-http-request',:require => 'em-http'
+gem 'addressable', :require => 'addressable/uri'
+
+
+########################################
+# Json Libraries
+########################################
+gem 'yajl-ruby'
+gem 'json'
+
+########################################
+# Helpers
+########################################
+# Shotgun for easy development
+gem 'shotgun'
