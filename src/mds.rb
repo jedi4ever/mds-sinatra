@@ -19,7 +19,7 @@ class Mds < Sinatra::Application
   end
   
 	post '/zap' do
-    redis.incr "#{params[:new]}"
+    redis.incr "#{params[:channel]}"
   #  redis.decr "#{params[:old]}"
     "Zapping from #{params[:old]} to #{params[:new]}"
 	end
